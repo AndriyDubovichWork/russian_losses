@@ -1,8 +1,4 @@
-import axios from 'axios';
-
-const APIClient = axios.create({
-	baseURL: 'https://russianwarship.rip/api/v1/',
-});
+import APIClient from '../../../api/DefaultAxiosSettings';
 
 const getTodayStatistic = async () => {
 	const res = await APIClient.get('statistics');

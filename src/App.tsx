@@ -1,25 +1,14 @@
-import React, { useEffect, useState } from 'react';
-import getTodayStatistic from './api/getTodayStatistic';
+import React from 'react';
 import './App.css';
+import TodaysLosses from './features/TodaysLosses/components/TodaysLosses';
+import { Provider } from 'react-redux';
+import store from './store';
 
 function App() {
-	const [records, setRecords] = useState([]);
-	useEffect(() => {
-		(async () => {
-			const res = await getTodayStatistic();
-
-			setRecords(res.records);
-		})();
-	}, []);
-
 	return (
-		<>
-			{records
-				? records.map((record: any, index) => {
-						return <p key={record.date}>{record.date}</p>;
-				  })
-				: 'loading'}
-		</>
+		<Provider store={store}>
+			<TodaysLosses />
+		</Provider>
 	);
 }
 
