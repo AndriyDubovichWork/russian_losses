@@ -9,19 +9,11 @@ const TodaysLosses = () => {
 		(async () => {
 			const res = await getTodayLossesStatistic();
 
-			dispatch(setLosses(res.records));
+			dispatch(setLosses(res.date));
 		})();
 	}, []);
 
-	return (
-		<>
-			{losses
-				? losses.map((record: any) => {
-						return <p key={record.date}>{record.date}</p>;
-				  })
-				: 'loading'}
-		</>
-	);
+	return <>{losses ? losses : 'loading'}</>;
 };
 
 export default TodaysLosses;

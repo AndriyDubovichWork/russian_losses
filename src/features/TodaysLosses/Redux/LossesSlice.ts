@@ -3,7 +3,7 @@ import { createSlice } from '@reduxjs/toolkit';
 const LossesSlice = createSlice({
 	name: 'losses',
 	initialState: {
-		value: [],
+		value: '',
 	},
 	reducers: {
 		setLosses: (state, action) => {
