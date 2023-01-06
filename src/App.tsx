@@ -1,13 +1,13 @@
 import React from 'react';
 import './App.css';
-import TodaysLosses from './features/TodaysLosses/components/TodaysLosses';
+import TodaysLossesGroup from './features/TodaysLosses/components/TodaysLossesGroup';
 import { Provider } from 'react-redux';
-import store from './store';
+import store from './Redux/store';
 
 function App() {
 	return (
 		<Provider store={store}>
-			<TodaysLosses />
+			<TodaysLossesGroup />
 		</Provider>
 	);
 }
