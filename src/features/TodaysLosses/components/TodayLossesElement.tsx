@@ -1,12 +1,24 @@
 import React from 'react';
-import { LossesDataType } from '../../../types/losses';
-
+import { TermType } from '../../../types/terms';
+import './style.scss';
 type TodayLossesElementProps = {
-	losses: LossesDataType;
+	term: TermType;
+	increase: number;
+	losses: number;
 };
 
-const TodayLossesElement = ({ losses }: TodayLossesElementProps) => {
-	return <div>{losses.stats.aa_warfare_systems}</div>;
+const TodayLossesElement = ({ losses, increase, term }: TodayLossesElementProps) => {
+	return (
+		<>
+			<div className='TodaylossesItem'>
+				<img className='TodaylossesImage' src={term.icon} alt='term.title' />
+				<h1 className='TodaylossesTitle'>{term.title}</h1>
+				<h2 className='TodaylossesCount'>
+					{losses} + {increase}
+				</h2>
+			</div>
+		</>
+	);
 };
 
 export default TodayLossesElement;

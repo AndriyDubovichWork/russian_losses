@@ -1,3 +1,5 @@
+import { TermType } from './terms';
+
 export type LossesType = {
 	personnel_units: number;
 	tanks: number;
@@ -20,4 +22,9 @@ export type LossesDataType = {
 	resource: string;
 	stats: LossesType;
 	increase: LossesType;
+};
+export type TodayLossesType = {
+	terms: TermType;
+	losses: number;
+	increase: number;
 };

@@ -1,0 +1,19 @@
+.TodaylossesItem {
+	margin: 100px;
+	width: 600px;
+	height: 500px;
+	color: #ffffff;
+	background-color: #6886d5;
+
+	.TodaylossesImage {
+		padding: 15px 10px;
+		height: 350px;
+		width: 580px;
+	}
+	.TodaylossesTitle {
+		padding: 0px 10px;
+	}
+	.TodaylossesCount {
+		padding: 20px 10px;
+	}
+}
