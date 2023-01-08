@@ -15,7 +15,7 @@ const TodayLossesElement = ({ losses, increase, term }: TodayLossesElementProps)
 				<h1 className='TodaylossesTitle'>{term.title}</h1>
 				<h2 className='TodaylossesCount'>
 					{/* if increased today show */}
-					{losses} {increase ? '+' + increase : ''}
+					{losses} {increase ? `(+ ${increase})` : ''}
 				</h2>
 			</div>
 		</>

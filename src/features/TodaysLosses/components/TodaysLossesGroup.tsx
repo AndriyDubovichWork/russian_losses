@@ -6,6 +6,8 @@ import getTodayLossesStatistic from '../api/getTodayLossesStatistic';
 import { setLosses } from '../Redux/LossesSlice';
 import TodayLossesElement from './TodayLossesElement';
 
+import './style.scss';
+
 const TodaysLosses = () => {
 	// get value from redux
 	const losses = useAppSelector((state) => state.losses.data);
@@ -39,7 +41,7 @@ const TodaysLosses = () => {
 	return (
 		<>
 			{losses ? (
-				<>
+				<div className='TodayLossesParent'>
 					{LossesNamesArray.map((TodayLosses) => {
 						return (
 							<TodayLossesElement
@@ -50,7 +52,7 @@ const TodaysLosses = () => {
 							/>
 						);
 					})}
-				</>
+				</div>
 			) : (
 				'loading'
 			)}

@@ -1,9 +1,21 @@
+.TodayLossesParent {
+	margin: 90px 40px;
+	display: grid;
+	grid-template-columns: repeat(3, 1fr);
+	grid-template-rows: repeat(4, 1fr);
+	grid-column-gap: 10px;
+	grid-row-gap: 20px;
+}
+
 .TodaylossesItem {
-	margin: 100px;
+	// margin: 100px;
 	width: 600px;
 	height: 500px;
+
 	color: #ffffff;
-	background-color: #6886d5;
+	background-color: #11117a;
+
+	border-radius: 15px;
 
 	.TodaylossesImage {
 		padding: 15px 10px;
@@ -14,7 +26,7 @@
 		padding: 0px 10px;
 		font-size: 25px;
 		font-weight: 900;
-		// show ... if sting too long
+		// show dots(...) if sting too long
 		text-overflow: ellipsis;
 		white-space: nowrap;
 		overflow: hidden;
