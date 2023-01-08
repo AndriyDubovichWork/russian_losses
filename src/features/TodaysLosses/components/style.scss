@@ -12,6 +12,12 @@
 	}
 	.TodaylossesTitle {
 		padding: 0px 10px;
+		font-size: 25px;
+		font-weight: 900;
+		// show ... if sting too long
+		text-overflow: ellipsis;
+		white-space: nowrap;
+		overflow: hidden;
 	}
 	.TodaylossesCount {
 		padding: 20px 10px;

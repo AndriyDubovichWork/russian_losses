@@ -14,7 +14,8 @@ const TodayLossesElement = ({ losses, increase, term }: TodayLossesElementProps)
 				<img className='TodaylossesImage' src={term.icon} alt='term.title' />
 				<h1 className='TodaylossesTitle'>{term.title}</h1>
 				<h2 className='TodaylossesCount'>
-					{losses} + {increase}
+					{/* if increased today show */}
+					{losses} {increase ? '+' + increase : ''}
 				</h2>
 			</div>
 		</>
