@@ -1,9 +1,11 @@
 import { configureStore } from '@reduxjs/toolkit';
+import LastDaysStatisticsReducer from '../features/Chart/Redux/LastDaysStatisticsSlice';
 import LossesReducer from '../features/TodaysLosses/Redux/LossesSlice';
 
 const store = configureStore({
 	reducer: {
 		losses: LossesReducer,
+		LastDaysStatistics: LastDaysStatisticsReducer,
 	},
 });
 
