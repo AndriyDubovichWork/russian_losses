@@ -5,33 +5,34 @@
 	grid-template-rows: repeat(4, 1fr);
 	grid-column-gap: 10px;
 	grid-row-gap: 20px;
-}
+	.TodaylossesItem {
+		// margin: 100px;
+		width: 600px;
+		height: 500px;
 
-.TodaylossesItem {
-	// margin: 100px;
-	width: 600px;
-	height: 500px;
+		background-color: #73c9b7;
 
-	color: #ffffff;
-	background-color: #11117a;
+		border-radius: 15px;
 
-	border-radius: 15px;
-
-	.TodaylossesImage {
-		padding: 15px 10px;
-		height: 350px;
-		width: 580px;
-	}
-	.TodaylossesTitle {
-		padding: 0px 10px;
-		font-size: 25px;
-		font-weight: 900;
-		// show dots(...) if sting too long
-		text-overflow: ellipsis;
-		white-space: nowrap;
-		overflow: hidden;
-	}
-	.TodaylossesCount {
-		padding: 20px 10px;
+		.TodaylossesImage {
+			padding: 15px 10px;
+			height: 350px;
+			width: 580px;
+		}
+		.TodaylossesTitle {
+			color: #ffffff;
+			padding: 0px 10px;
+			font-size: 25px;
+			font-weight: 900;
+			// show dots(...) if sting too long
+			text-overflow: ellipsis;
+			white-space: nowrap;
+			overflow: hidden;
+		}
+		.TodaylossesCount {
+			color: #15123f;
+			font-weight: 900;
+			padding: 20px 10px;
+		}
 	}
 }

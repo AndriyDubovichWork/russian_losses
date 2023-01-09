@@ -1,6 +1,6 @@
 body {
 	margin: 0;
-	background-color: #000088;
+	background-color: #b3dee5;
 	color: #d3d3d3;
 	font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen', 'Ubuntu',
 		'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue', sans-serif;
@@ -23,16 +23,16 @@ code {
 
 /* Track */
 ::-webkit-scrollbar-track {
-	background: #6107cc;
+	background: #c7dfcd;
 }
 
 /* Handle */
 ::-webkit-scrollbar-thumb {
-	background: #742895;
+	background: #73c9b7;
 	border-radius: 40px;
 }
 
 /* Handle on hover */
 ::-webkit-scrollbar-thumb:hover {
-	background: #8c09aa;
+	background: #fce469;
 }

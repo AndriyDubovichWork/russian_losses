@@ -41,18 +41,20 @@ const TodaysLosses = () => {
 	return (
 		<>
 			{losses ? (
-				<div className='TodayLossesParent'>
-					{LossesNamesArray.map((TodayLosses) => {
-						return (
-							<TodayLossesElement
-								key={TodayLosses.terms.title}
-								increase={TodayLosses.increase}
-								losses={TodayLosses.losses}
-								term={TodayLosses.terms}
-							/>
-						);
-					})}
-				</div>
+				<>
+					<div className='TodayLossesParent'>
+						{LossesNamesArray.map((TodayLosses) => {
+							return (
+								<TodayLossesElement
+									key={TodayLosses.terms.title}
+									increase={TodayLosses.increase}
+									losses={TodayLosses.losses}
+									term={TodayLosses.terms}
+								/>
+							);
+						})}
+					</div>
+				</>
 			) : (
 				'loading'
 			)}
