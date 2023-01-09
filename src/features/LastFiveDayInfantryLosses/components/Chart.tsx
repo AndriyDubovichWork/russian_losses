@@ -1,21 +1,27 @@
 import React, { useEffect } from 'react';
 import getInfoInSpecificDate from '../api/getInfoInSpecificDate';
 import getLastFiveDayFormated from '../dates/getLastFiveDayFormated';
+import SortLossesRespondeByDate from '../dates/SortLossesRespondByDate';
 // import { CChart } from '@coreui/react-chartjs';
-import { LossesType } from './../../../types/losses';
+import { LossesDataWithOutIncreaseType } from './../../../types/losses';
 import './style.scss';
 
 // type ChartProps = {};
 
 const Chart = () => {
 	useEffect(() => {
-		const res: LossesType[] = [];
+		const res: LossesDataWithOutIncreaseType[] = [];
 		const lastFiveDays = getLastFiveDayFormated();
-		lastFiveDays.map(async (day) => {
-			res.push(await getInfoInSpecificDate(day));
-		});
+		(async () => {
+			await lastFiveDays.map(async (day) => {
+				res.push(await getInfoInSpecificDate(day));
+			});
+		})();
 
-		console.log(res);
+		if (res.length > 0) {
+			SortLossesRespondeByDate(res);
+		}
+		console.log(lastFiveDays);
 	}, []);
 	return (
 		<div className='Chart'>

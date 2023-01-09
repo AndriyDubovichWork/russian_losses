@@ -16,6 +16,14 @@ export type LossesType = {
 	special_military_equip: number;
 	atgm_srbm_systems: number;
 };
+
+export type LossesDataWithOutIncreaseType = {
+	date: string;
+	day: number;
+	resource: string;
+	stats: LossesType;
+};
+
 export type LossesDataType = {
 	date: string;
 	day: number;
