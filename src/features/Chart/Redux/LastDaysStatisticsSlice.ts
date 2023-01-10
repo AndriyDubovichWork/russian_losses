@@ -1,8 +1,9 @@
 import { createSlice } from '@reduxjs/toolkit';
-import { LossesDataWithOutIncreaseType } from '../../../types/losses';
+import { LossesDataType } from '../../../types/losses';
 
 type initialStateType = {
-	statistic: LossesDataWithOutIncreaseType[];
+	statistic: LossesDataType[];
+	selected: string;
 };
 
 const initialState: initialStateType = {
@@ -27,8 +28,25 @@ const initialState: initialStateType = {
 				special_military_equip: 0,
 				atgm_srbm_systems: 0,
 			},
+			increase: {
+				personnel_units: 0,
+				tanks: 0,
+				armoured_fighting_vehicles: 0,
+				artillery_systems: 0,
+				mlrs: 0,
+				aa_warfare_systems: 0,
+				planes: 0,
+				helicopters: 0,
+				vehicles_fuel_tanks: 0,
+				warships_cutters: 0,
+				cruise_missiles: 0,
+				uav_systems: 0,
+				special_military_equip: 0,
+				atgm_srbm_systems: 0,
+			},
 		},
 	],
+	selected: 'personnel_units',
 };
 
 const LastDaysStatisticsSlice = createSlice({
@@ -38,8 +56,11 @@ const LastDaysStatisticsSlice = createSlice({
 		setLastDaysInfo: (state, action) => {
 			state.statistic = action.payload;
 		},
+		setSelectedKeyOfLosses: (state, action) => {
+			state.selected = action.payload;
+		},
 	},
 });
 
-export const { setLastDaysInfo } = LastDaysStatisticsSlice.actions;
+export const { setLastDaysInfo, setSelectedKeyOfLosses } = LastDaysStatisticsSlice.actions;
 export default LastDaysStatisticsSlice.reducer;

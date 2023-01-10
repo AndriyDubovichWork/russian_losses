@@ -36,3 +36,8 @@ export type TodayLossesType = {
 	losses: number;
 	increase: number;
 };
+
+export type LossesNamesArrayType = {
+	Todaylosses: TodayLossesType;
+	keyOfLosses: string;
+}[];

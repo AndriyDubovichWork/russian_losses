@@ -1,12 +1,13 @@
 import React, { useEffect } from 'react';
 import { useAppDispatch, useAppSelector } from '../../../hooks/useReduxHooks';
-import { TodayLossesType } from '../../../types/losses';
+import { LossesNamesArrayType, TodayLossesType } from '../../../types/losses';
 import getTodayLossesStatistic from '../api/getTodayLossesStatistic';
 
 import { setLosses } from '../Redux/LossesSlice';
 import TodayLossesElement from './TodayLossesElement';
 
 import './style.scss';
+import { setSelectedKeyOfLosses } from '../../Chart/Redux/LastDaysStatisticsSlice';
 
 const TodaysLosses = () => {
 	// get value from redux
@@ -25,7 +26,8 @@ const TodaysLosses = () => {
 			dispatch(setLosses(res));
 		})();
 	}, []);
-	const LossesNamesArray: TodayLossesType[] = [];
+
+	const LossesNamesArray: LossesNamesArrayType = [];
 
 	// map through terms object each term key equal losses key
 	Object.keys(terms).forEach(function (key, index) {
@@ -36,20 +38,25 @@ const TodaysLosses = () => {
 			terms: terms[key as keyof typeof terms],
 		};
 
-		LossesNamesArray.push(res);
+		LossesNamesArray.push({ Todaylosses: res, keyOfLosses: key });
 	});
 	return (
 		<>
 			{losses ? (
 				<>
 					<div className='TodayLossesParent'>
-						{LossesNamesArray.map((TodayLosses) => {
+						{LossesNamesArray.map(({ Todaylosses, keyOfLosses }) => {
+							// set key of losses to Redux
+							const setKeyOfLosses = () => {
+								dispatch(setSelectedKeyOfLosses(keyOfLosses));
+							};
 							return (
 								<TodayLossesElement
-									key={TodayLosses.terms.title}
-									increase={TodayLosses.increase}
-									losses={TodayLosses.losses}
-									term={TodayLosses.terms}
+									key={Todaylosses.terms.title}
+									increase={Todaylosses.increase}
+									losses={Todaylosses.losses}
+									term={Todaylosses.terms}
+									setKeyOfLosses={setKeyOfLosses}
 								/>
 							);
 						})}
