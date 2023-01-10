@@ -17,13 +17,27 @@ const TodayLossesElement = ({
 	return (
 		<>
 			<div className='TodaylossesItem'>
-				<input
-					type={'radio'}
-					name='lossesType'
-					onClick={() => {
-						setKeyOfLosses();
-					}}
-				/>
+				{/* infantry losses default checked */}
+				{term.title === 'Особовий склад' || term.title === 'Personnel units' ? (
+					<input
+						defaultChecked
+						className='RadioButton'
+						type={'radio'}
+						name='lossesType'
+						onClick={() => {
+							setKeyOfLosses();
+						}}
+					/>
+				) : (
+					<input
+						className='RadioButton'
+						type={'radio'}
+						name='lossesType'
+						onClick={() => {
+							setKeyOfLosses();
+						}}
+					/>
+				)}
 				<img className='TodaylossesImage' src={term.icon} alt='term.title' />
 				<h1 className='TodaylossesTitle'>{term.title}</h1>
 				<h2 className='TodaylossesCount'>

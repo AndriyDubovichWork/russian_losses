@@ -5,6 +5,7 @@ import { TermsType } from '../../../types/terms';
 type InitislStateType = {
 	data: LossesDataType;
 	terms: TermsType;
+	selectedLanguage: 'ua' | 'en';
 };
 
 const initialState: InitislStateType = {
@@ -103,6 +104,7 @@ const initialState: InitislStateType = {
 			icon: 'https://russianwarship.rip/images/icons/icon-rocket.svg',
 		},
 	},
+	selectedLanguage: 'ua',
 };
 
 const LossesSlice = createSlice({
@@ -112,8 +114,14 @@ const LossesSlice = createSlice({
 		setLosses: (state, action) => {
 			state.data = action.payload;
 		},
+		setTerms: (state, action) => {
+			state.terms = action.payload;
+		},
+		setLanguage: (state, action) => {
+			state.selectedLanguage = action.payload;
+		},
 	},
 });
 
-export const { setLosses } = LossesSlice.actions;
+export const { setLosses, setTerms, setLanguage } = LossesSlice.actions;
 export default LossesSlice.reducer;

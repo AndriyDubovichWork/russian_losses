@@ -1,0 +1,14 @@
+.Header {
+	width: 98%;
+	height: 30px;
+	background-color: black;
+	margin-bottom: 40px;
+	padding: 20px 1%;
+
+	position: relative;
+	.LanguageSelector {
+		position: absolute;
+		right: 20px;
+		top: 25px;
+	}
+}

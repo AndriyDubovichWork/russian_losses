@@ -3,16 +3,18 @@ import { useAppDispatch, useAppSelector } from '../../../hooks/useReduxHooks';
 import { LossesNamesArrayType, TodayLossesType } from '../../../types/losses';
 import getTodayLossesStatistic from '../api/getTodayLossesStatistic';
 
-import { setLosses } from '../Redux/LossesSlice';
+import { setLosses, setTerms } from '../Redux/LossesSlice';
 import TodayLossesElement from './TodayLossesElement';
 
 import './style.scss';
 import { setSelectedKeyOfLosses } from '../../Chart/Redux/LastDaysStatisticsSlice';
+import getTerms from '../api/getTerms';
 
 const TodaysLosses = () => {
 	// get value from redux
 	const losses = useAppSelector((state) => state.losses.data);
 	const terms = useAppSelector((state) => state.losses.terms);
+	const Selectedlanguage = useAppSelector((state) => state.losses.selectedLanguage);
 
 	const dispatch = useAppDispatch();
 
@@ -20,12 +22,24 @@ const TodaysLosses = () => {
 	useEffect(() => {
 		(async () => {
 			const res = await getTodayLossesStatistic();
+			const terms = await getTerms(Selectedlanguage);
 
 			//set losses to Redux store
 
 			dispatch(setLosses(res));
+			dispatch(setTerms(terms));
 		})();
 	}, []);
+
+	useEffect(() => {
+		(async () => {
+			const terms = await getTerms(Selectedlanguage);
+
+			//set losses to Redux store
+
+			dispatch(setTerms(terms));
+		})();
+	}, [Selectedlanguage]);
 
 	const LossesNamesArray: LossesNamesArrayType = [];
 

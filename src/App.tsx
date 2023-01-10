@@ -4,10 +4,12 @@ import TodaysLossesGroup from './features/TodaysLosses/components/TodaysLossesGr
 import Chart from './features/Chart/components/Chart';
 import { Provider } from 'react-redux';
 import store from './Redux/store';
+import Header from './components/Header/Header';
 
 function App() {
 	return (
 		<Provider store={store}>
+			<Header />
 			<TodaysLossesGroup />
 			<Chart />
 		</Provider>
