@@ -22,10 +22,18 @@
 
 		.RadioButton {
 			position: absolute;
-			width: 20px;
-			height: 20px;
+
 			top: 15px;
 			left: 15px;
+			input {
+				width: 20px;
+				height: 20px;
+			}
+			label {
+				font-weight: 600;
+				color: #fff;
+				font-size: 25px;
+			}
 		}
 
 		.TodaylossesImage {

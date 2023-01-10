@@ -71,6 +71,7 @@ const TodaysLosses = () => {
 									losses={Todaylosses.losses}
 									term={Todaylosses.terms}
 									setKeyOfLosses={setKeyOfLosses}
+									Selectedlanguage={Selectedlanguage}
 								/>
 							);
 						})}
