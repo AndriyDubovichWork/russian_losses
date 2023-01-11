@@ -7,7 +7,7 @@ import { setLosses, setTerms } from '../Redux/LossesSlice';
 import TodayLossesElement from './TodayLossesElement';
 
 import './style.scss';
-import { setSelectedKeyOfLosses } from '../../Chart/Redux/LastDaysStatisticsSlice';
+import { setSelectedKeyOfLosses } from '../../Chart/Redux/Chart';
 import getTerms from '../api/getTerms';
 
 const TodaysLosses = () => {

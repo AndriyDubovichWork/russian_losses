@@ -49,7 +49,7 @@ const initialState: initialStateType = {
 	selected: 'personnel_units',
 };
 
-const LastDaysStatisticsSlice = createSlice({
+const ChartSlice = createSlice({
 	name: 'LastDaysStatistics',
 	initialState,
 	reducers: {
@@ -62,5 +62,5 @@ const LastDaysStatisticsSlice = createSlice({
 	},
 });
 
-export const { setLastDaysInfo, setSelectedKeyOfLosses } = LastDaysStatisticsSlice.actions;
-export default LastDaysStatisticsSlice.reducer;
+export const { setLastDaysInfo, setSelectedKeyOfLosses } = ChartSlice.actions;
+export default ChartSlice.reducer;

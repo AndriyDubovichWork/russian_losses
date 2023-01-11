@@ -1,7 +1,7 @@
 import React, { useEffect } from 'react';
 import { useAppDispatch, useAppSelector } from '../../../hooks/useReduxHooks';
 import getLastNDaysInfo from '../api/getLastNDaysInfo';
-import { setLastDaysInfo } from '../Redux/LastDaysStatisticsSlice';
+import { setLastDaysInfo } from '../Redux/Chart';
 
 import { CChart } from '@coreui/react-chartjs';
 import './style.scss';
