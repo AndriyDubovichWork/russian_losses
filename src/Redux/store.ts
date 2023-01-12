@@ -1,5 +1,5 @@
 import { configureStore } from '@reduxjs/toolkit';
-import LastDaysStatisticsReducer from '../features/Chart/Redux/Chart';
+import LastDaysStatisticsReducer from '../features/Chart/Redux/ChartSlice';
 import LanguagesReducer from '../features/languages/Redux/languagesSlice';
 import LossesReducer from '../features/TodaysLosses/Redux/LossesSlice';
 

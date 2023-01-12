@@ -1,5 +1,5 @@
 import React from 'react';
-import './App.css';
+import './App.scss';
 import TodaysLossesGroup from './features/TodaysLosses/components/TodaysLossesGroup';
 import Chart from './features/Chart/components/Chart';
 import { Provider } from 'react-redux';
@@ -10,8 +10,10 @@ function App() {
 	return (
 		<Provider store={store}>
 			<Header />
-			<TodaysLossesGroup />
-			<Chart />
+			<main>
+				<TodaysLossesGroup />
+				<Chart />
+			</main>
 		</Provider>
 	);
 }

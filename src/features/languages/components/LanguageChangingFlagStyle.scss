@@ -1,0 +1,25 @@
+.Triangle {
+	// triangle
+	display: inline-block;
+	width: calc(100% - 100px);
+	height: 0;
+	border-style: solid;
+	border-width: 0 100px 75px 0;
+	border-color: transparent #6980fe transparent transparent;
+
+	z-index: 10;
+
+	position: sticky;
+	top: 0;
+	right: 0;
+
+	.FlagImage {
+		width: 50px;
+		height: 30px;
+		position: absolute;
+		top: 0px;
+		right: -100px;
+
+		cursor: pointer;
+	}
+}

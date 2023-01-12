@@ -1,13 +1,22 @@
 import React, { useEffect } from 'react';
 import { useAppDispatch, useAppSelector } from '../../../hooks/useReduxHooks';
 import getLastNDaysInfo from '../api/getLastNDaysInfo';
-import { setLastDaysInfo } from '../Redux/Chart';
+import { setLastDaysInfo } from '../Redux/ChartSlice';
 
-import { CChart } from '@coreui/react-chartjs';
 import './style.scss';
 import { LossesDataType } from '../../../types/losses';
+import {
+	Chart as ChartJS,
+	CategoryScale,
+	LinearScale,
+	BarElement,
+	Title,
+	Tooltip,
+	Legend,
+} from 'chart.js';
+import { Bar } from 'react-chartjs-2';
 
-// type ChartProps = {};
+ChartJS.register(CategoryScale, LinearScale, BarElement, Title, Tooltip, Legend);
 
 const Chart = () => {
 	const dispatch = useAppDispatch();
@@ -60,20 +69,19 @@ const Chart = () => {
 
 			res.shift();
 
-			// get last days statistic
+			// set last days statistic
 			dispatch(setLastDaysInfo(res));
 		})();
 	}, []);
 	// get last days statistic from Redux
 	const statistic = useAppSelector((state) => state.LastDaysStatistics.statistic);
 	const selectedUnits: string = useAppSelector((state) => state.LastDaysStatistics.selected);
-	const terms = useAppSelector((state) => state.losses.terms);
+	const terms = useAppSelector((state) => state.languages.terms);
 
 	return (
 		<div className='Chart'>
 			<h1 className='ChartTitle'>{terms[selectedUnits as keyof typeof terms].title}</h1>
-			<CChart
-				type='bar'
+			<Bar
 				data={{
 					labels: statistic.map((day) => day.date),
 					datasets: [
