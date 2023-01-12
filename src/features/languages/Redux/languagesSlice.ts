@@ -1,50 +1,12 @@
 import { createSlice } from '@reduxjs/toolkit';
-import { LossesDataType } from '../../../types/losses';
 import { TermsType } from '../../../types/terms';
 
 type InitislStateType = {
-	data: LossesDataType;
 	terms: TermsType;
+	selectedLanguage: 'ua' | 'en';
 };
 
 const initialState: InitislStateType = {
-	data: {
-		date: '',
-		day: 0,
-		resource: '',
-		stats: {
-			personnel_units: 0,
-			tanks: 0,
-			armoured_fighting_vehicles: 0,
-			artillery_systems: 0,
-			mlrs: 0,
-			aa_warfare_systems: 0,
-			planes: 0,
-			helicopters: 0,
-			vehicles_fuel_tanks: 0,
-			warships_cutters: 0,
-			cruise_missiles: 0,
-			uav_systems: 0,
-			special_military_equip: 0,
-			atgm_srbm_systems: 0,
-		},
-		increase: {
-			personnel_units: 0,
-			tanks: 0,
-			armoured_fighting_vehicles: 0,
-			artillery_systems: 0,
-			mlrs: 0,
-			aa_warfare_systems: 0,
-			planes: 0,
-			helicopters: 0,
-			vehicles_fuel_tanks: 0,
-			warships_cutters: 0,
-			cruise_missiles: 0,
-			uav_systems: 0,
-			special_military_equip: 0,
-			atgm_srbm_systems: 0,
-		},
-	},
 	terms: {
 		personnel_units: {
 			title: 'Особовий склад',
@@ -103,20 +65,21 @@ const initialState: InitislStateType = {
 			icon: 'https://russianwarship.rip/images/icons/icon-rocket.svg',
 		},
 	},
+	selectedLanguage: 'ua',
 };
 
-const LossesSlice = createSlice({
-	name: 'losses',
+const LanguagesSlice = createSlice({
+	name: 'languages',
 	initialState,
 	reducers: {
-		setLosses: (state, action) => {
-			state.data = action.payload;
-		},
 		setTerms: (state, action) => {
 			state.terms = action.payload;
+		},
+		setLanguage: (state, action) => {
+			state.selectedLanguage = action.payload;
 		},
 	},
 });
 
-export const { setLosses, setTerms } = LossesSlice.actions;
-export default LossesSlice.reducer;
+export const { setTerms, setLanguage } = LanguagesSlice.actions;
+export default LanguagesSlice.reducer;

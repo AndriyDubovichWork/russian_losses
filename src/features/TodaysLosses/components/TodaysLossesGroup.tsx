@@ -14,7 +14,7 @@ const TodaysLosses = () => {
 	// get value from redux
 	const losses = useAppSelector((state) => state.losses.data);
 	const terms = useAppSelector((state) => state.losses.terms);
-	const Selectedlanguage = useAppSelector((state) => state.losses.selectedLanguage);
+	const Selectedlanguage = useAppSelector((state) => state.languages.selectedLanguage);
 
 	const dispatch = useAppDispatch();
 
