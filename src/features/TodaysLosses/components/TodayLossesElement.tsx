@@ -1,13 +1,14 @@
 import React from 'react';
 import { useAppSelector } from '../../../hooks/useReduxHooks';
 import { TermType } from '../../../types/terms';
+import { AiOutlineBarChart } from 'react-icons/ai';
 import './style.scss';
 type TodayLossesElementProps = {
 	term: TermType;
 	increase: number;
 	losses: number;
 	keyOfLosses: string;
-	setKeyOfLosses: () => void;
+	setKeyOfLosses: (key: string) => void;
 };
 
 const TodayLossesElement = ({
@@ -23,15 +24,13 @@ const TodayLossesElement = ({
 		<>
 			<div className='TodaylossesItem'>
 				{/* infantry losses default checked */}
-				<div className='RadioButton'>
-					<input
-						// if selected current show it selected
-						defaultChecked={keyOfLosses === SelectedStatisticForChart}
-						type={'radio'}
-						id={term.title}
-						name='lossesType'
+				<div className='ChartButton'>
+					<AiOutlineBarChart
+						color={keyOfLosses === SelectedStatisticForChart ? 'red' : 'grey'}
+						size={30}
+						className='ChartIcon'
 						onClick={() => {
-							setKeyOfLosses();
+							setKeyOfLosses(keyOfLosses);
 						}}
 					/>
 				</div>

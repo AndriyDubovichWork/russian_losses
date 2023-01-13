@@ -21,19 +21,18 @@
 
 		position: relative;
 
-		.RadioButton {
+		.ChartButton {
 			position: absolute;
 
-			top: 15px;
-			left: 15px;
-			input {
-				width: 20px;
-				height: 20px;
+			top: 10px;
+			left: 10px;
+			z-index: 3;
+
+			.ChartIcon {
+				cursor: pointer;
 			}
-			label {
-				font-weight: 600;
-				color: #fff;
-				font-size: 25px;
+			.ChartIcon:hover {
+				color: #15123f;
 			}
 		}
 

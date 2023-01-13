@@ -40,8 +40,8 @@ const TodaysLosses = () => {
 					<div className='TodayLossesParent'>
 						{TodayLossesArray.map(({ Todaylosses, keyOfLosses }) => {
 							// set key of losses to Redux
-							const setKeyOfLosses = () => {
-								dispatch(setSelectedKeyOfLosses(keyOfLosses));
+							const setKeyOfLosses = (key: string) => {
+								dispatch(setSelectedKeyOfLosses(key));
 							};
 							return (
 								<TodayLossesElement
