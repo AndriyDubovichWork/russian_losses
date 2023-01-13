@@ -5,6 +5,7 @@ import Chart from './features/Chart/components/Chart';
 import { Provider } from 'react-redux';
 import store from './Redux/store';
 import Header from './components/Header/Header';
+import Footer from './components/Fotter/Footer';
 
 function App() {
 	return (
@@ -14,6 +15,7 @@ function App() {
 				<TodaysLossesGroup />
 				<Chart />
 			</main>
+			<Footer />
 		</Provider>
 	);
 }
