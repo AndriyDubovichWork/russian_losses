@@ -1,13 +1,13 @@
 {
   "files": {
-    "main.css": "/russian_losses/static/css/main.e0b077f0.css",
-    "main.js": "/russian_losses/static/js/main.52d22c16.js",
+    "main.css": "/russian_losses/static/css/main.a786a011.css",
+    "main.js": "/russian_losses/static/js/main.0e04f7ac.js",
     "index.html": "/russian_losses/index.html",
-    "main.e0b077f0.css.map": "/russian_losses/static/css/main.e0b077f0.css.map",
-    "main.52d22c16.js.map": "/russian_losses/static/js/main.52d22c16.js.map"
+    "main.a786a011.css.map": "/russian_losses/static/css/main.a786a011.css.map",
+    "main.0e04f7ac.js.map": "/russian_losses/static/js/main.0e04f7ac.js.map"
   },
   "entrypoints": [
-    "static/css/main.e0b077f0.css",
-    "static/js/main.52d22c16.js"
+    "static/css/main.a786a011.css",
+    "static/js/main.0e04f7ac.js"
   ]
 }
