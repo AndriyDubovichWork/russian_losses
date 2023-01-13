@@ -1,0 +1,13 @@
+{
+  "files": {
+    "main.css": "/russian_losses/static/css/main.c50206ec.css",
+    "main.js": "/russian_losses/static/js/main.b857138e.js",
+    "index.html": "/russian_losses/index.html",
+    "main.c50206ec.css.map": "/russian_losses/static/css/main.c50206ec.css.map",
+    "main.b857138e.js.map": "/russian_losses/static/js/main.b857138e.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.c50206ec.css",
+    "static/js/main.b857138e.js"
+  ]
+}
