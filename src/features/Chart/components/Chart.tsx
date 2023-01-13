@@ -73,6 +73,7 @@ const Chart = () => {
 			dispatch(setLastDaysInfo(res));
 		})();
 	}, []);
+
 	// get last days statistic from Redux
 	const statistic = useAppSelector((state) => state.LastDaysStatistics.statistic);
 	const selectedUnits: string = useAppSelector((state) => state.LastDaysStatistics.selected);
@@ -81,20 +82,23 @@ const Chart = () => {
 	return (
 		<div className='Chart'>
 			<h1 className='ChartTitle'>{terms[selectedUnits as keyof typeof terms].title}</h1>
-			<Bar
-				data={{
-					labels: statistic.map((day) => day.date),
-					datasets: [
-						{
-							label: terms[selectedUnits as keyof typeof terms].title,
-							backgroundColor: '#f87979',
-							data: statistic.map(
-								(day) => day.increase[selectedUnits as keyof typeof day.increase]
-							),
-						},
-					],
-				}}
-			/>
+			<div className='ChartContainer'>
+				<Bar
+					options={{ maintainAspectRatio: false }}
+					data={{
+						labels: statistic.map((day) => day.date),
+						datasets: [
+							{
+								label: terms[selectedUnits as keyof typeof terms].title,
+								backgroundColor: '#f87979',
+								data: statistic.map(
+									(day) => day.increase[selectedUnits as keyof typeof day.increase]
+								),
+							},
+						],
+					}}
+				/>
+			</div>
 		</div>
 	);
 };
