@@ -35,7 +35,7 @@ const TodayLossesElement = ({
 					/>
 				</div>
 
-				<img className='TodaylossesImage' src={term.icon} alt='term.title' />
+				<img className='TodaylossesImage' src={term.icon} alt={term.title} />
 				<h1 className='TodaylossesTitle'>{term.title}</h1>
 				<h2 className='TodaylossesCount'>
 					{/* if number bigger than 1000 show extra space like so (1 000) */}
